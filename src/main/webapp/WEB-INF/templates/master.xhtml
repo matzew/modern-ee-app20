@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+  Copyright (C) 2010 Matthias Weßendorf
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+<title>${title}</title>
+  <h:outputStylesheet id="cssDude" name="jug.css" />
+  <h:outputScript id="jsDude" name="jsf.js" library="javax.faces" />
+</h:head>
+
+<h:body>
+
+<div id="container">
+
+<div id="header"><h1>Modern Java Enterprise Applications</h1></div>
+
+<div id="sub_header">... feat. Apache technologies, like OpenWebBeans or MyFaces</div>
+
+<div id="main_content_top"></div>
+
+<div id="main_content">
+
+<div class="content">
+<h:form prependId="false">
+  <h:messages />
+  <ui:insert name="content">CONTENT</ui:insert>
+</h:form>
+</div>
+
+<div class="menu">
+<div class="menu_title">Links</div>
+<ui:include src="links.xhtml" />
+</div>
+
+<div id="clear"></div>
+
+</div>
+
+<div id="main_content_bottom">
+</div>
+
+<div id="footer"><strong>Copyright &copy; 2010</strong> | Matthias Weßendorf | <b>Design by</b> <a href="http://www.pikanai.com">Pikanai.com</a></div>
+
+</div>
+
+</h:body>
+
+</html>

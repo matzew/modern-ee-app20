@@ -1,0 +1,18 @@
+== Modern JavaEE Application ==
+
+* Getting started:
+mvn
+
+(this will download all the required JARs and start the Jetty 8 container on localhost:9090)
+
+About this demo:
+The demo is a simple show case for modern JavaEE technology:
+-CDI (Apache OpenWebBeans)
+-JPA (Apache OpenJPA)
+-JSF2 (Apache MyFaces)
+
+and a set of CDI extensions (Apache MyFaces CODI)
+
+====
+Questions?
+ping me via my Apache email address (matzew @ ...)

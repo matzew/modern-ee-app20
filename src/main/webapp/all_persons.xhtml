@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<!--
+  Copyright (C) 2010 Matthias Wessendorf.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+  <title>FOO</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+  <ui:composition  template="/WEB-INF/templates/master.xhtml" >
+    <ui:param name="title" value="List persons.."/>
+    <ui:define name="content">
+
+    <p>All persons</p>
+    
+    <h:dataTable border="1" value="#{allPersons.persons}" var="person">
+      <h:column>
+        <f:facet name="header">
+          Firstname
+        </f:facet>
+        #{person.firstname}
+      </h:column>
+      <h:column>
+        <f:facet name="header">
+          Secondname
+        </f:facet>
+        #{person.lastname}
+      </h:column>
+      <h:column>
+        <f:facet name="header">
+          Delete
+        </f:facet>
+        <h:commandLink value="Delete" action="#{allPersons.delete}">
+          <f:setPropertyActionListener target="#{allPersons.toDelete}" value="#{person}" />
+        </h:commandLink>
+      </h:column>
+    </h:dataTable>
+    </ui:define>
+  </ui:composition>
+</body>
+</html>
