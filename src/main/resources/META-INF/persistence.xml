@@ -17,22 +17,22 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
-        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
-  version="1.0">
+        http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+  version="2.0">
 
   <persistence-unit name="simpleModernEEApplication" transaction-type="RESOURCE_LOCAL">
-    <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 
     <class>net.wessendorf.enterprise.beans.Person</class>
 
     <properties>
-      <property name="openjpa.ConnectionDriverName"   value="org.apache.derby.jdbc.EmbeddedDriver"/>
-      <property name="openjpa.ConnectionURL"      value="jdbc:derby:memory:modernEEApplication;create=true"/>
-      <property name="openjpa.ConnectionUserName"     value=""/>
-      <property name="openjpa.ConnectionPassword" value=""/>
+      <!-- JPA standard properties -->
+      <property name="javax.persistence.jdbc.driver"   value="org.apache.derby.jdbc.EmbeddedDriver"/>
+      <property name="javax.persistence.jdbc.url"      value="jdbc:derby:memory:modernEEApplication;create=true"/>
+      <property name="javax.persistence.jdbc.user"     value=""/>
+      <property name="javax.persistence.jdbc.password" value=""/>
 
+      <!-- implementation (Apache OpenJPA) specific settings... -->
       <property name="openjpa.Log" value="DefaultLevel=TRACE" />
-      <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)" />
       <property name="openjpa.DataCache"                value="true"/> 		
       <property name="openjpa.RemoteCommitProvider"     value="sjvm"/>
       <property name="openjpa.InitializeEagerly"        value="true"/>
@@ -40,6 +40,7 @@
       <property name="openjpa.RuntimeUnenhancedClasses" value="unsupported"/>
       <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
       <property name="openjpa.jdbc.QuerySQLCache"       value="true(EnableStatistics=true)"/>
+
     </properties>
-    </persistence-unit>
+  </persistence-unit>
 </persistence>
