@@ -11,8 +11,15 @@ The demo is a simple show case for modern JavaEE technology:
 -JPA (Apache OpenJPA)
 -JSF2 (Apache MyFaces)
 
-and a set of CDI extensions (Apache MyFaces CODI)
+and a set of CDI extensions (Apache MyFaces CODI)!
+
+In the (near) future it is planed to add @lincolnthree's URL rewriting library "PrettyFaces"
+to this tiny project.
 
 ====
-Questions?
-ping me via my Apache email address (matzew @ ...)
+Questions or suggestions?
+Please ping me via my Apache email address (matzew @ ...)!
+
+-Matthias Wessendorf
+http://matthiaswessendorf.wordpress.com
+@mwessendorf
