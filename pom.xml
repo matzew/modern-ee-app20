@@ -139,6 +139,13 @@
       <version>${myfaces.version}</version>
     </dependency>
 
+    <!-- PrettyFaces URL rewriting -->
+    <!--dependency>
+      <groupId>com.ocpsoft</groupId>
+      <artifactId>prettyfaces-jsf2</artifactId>
+      <version>3.1.0</version>
+    </dependency-->
+
     <!-- Apache MyFaces CODI -->
     <dependency>
       <groupId>org.apache.myfaces.extensions.cdi</groupId>
