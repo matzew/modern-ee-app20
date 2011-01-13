@@ -89,7 +89,7 @@
         <version>2.0</version>
       </plugin>
 
-      <plugin>
+      <!--plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
           <execution>
@@ -104,6 +104,21 @@
             </goals>
           </execution>
         </executions>
+      </plugin-->
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>openjpa-maven-plugin</artifactId>
+        <version>1.2</version>
+        <executions>
+          <execution>
+            <id>enhancer</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>enhance</goal>
+            </goals>
+          </execution>
+        </executions> 
       </plugin>
 
     </plugins>
