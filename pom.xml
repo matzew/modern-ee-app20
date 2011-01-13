@@ -119,9 +119,16 @@
             </goals>
           </execution>
         </executions> 
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.openjpa</groupId>
+            <artifactId>openjpa-persistence-jdbc</artifactId>
+            <version>${openjpa.version}</version>
+          </dependency>
+        </dependencies>
       </plugin>
-
     </plugins>
+
     <pluginManagement>
       <plugins>
         <plugin>
