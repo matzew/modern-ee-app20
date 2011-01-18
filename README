@@ -13,8 +13,7 @@ The demo is a simple show case for modern JavaEE technology:
 
 and a set of CDI extensions (Apache MyFaces CODI)!
 
-In the (near) future it is planed to add @lincolnthree's URL rewriting library "PrettyFaces"
-to this tiny project.
+In addition to that, the sample contains @lincolnthree's URL rewriting library "PrettyFaces".
 
 ====
 Questions or suggestions?
