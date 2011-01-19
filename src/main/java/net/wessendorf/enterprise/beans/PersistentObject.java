@@ -33,7 +33,7 @@ public abstract class PersistentObject implements Serializable
   private String id;
 
   @Version
-  private int versionId;
+  private int versionId; 
 
   // ------ bogus get/set stuff
   public String getId()
