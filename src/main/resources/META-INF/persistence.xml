@@ -22,7 +22,12 @@
 
   <persistence-unit name="simpleModernEEApplication" transaction-type="RESOURCE_LOCAL">
 
+    <!-- @MappedSuperclass classes (not needed with EclipseLink, see OPENJPA-1926 -->
+    <class>net.wessendorf.enterprise.beans.PersistentObject</class>
+    
+    <!-- @Entity classes -->
     <class>net.wessendorf.enterprise.beans.Person</class>
+    <class>net.wessendorf.enterprise.beans.Friend</class>
 
     <properties>
       <!-- JPA standard properties -->
@@ -32,14 +37,18 @@
       <property name="javax.persistence.jdbc.password" value=""/>
 
       <!-- implementation (Apache OpenJPA) specific settings... -->
-      <property name="openjpa.Log" value="DefaultLevel=TRACE" />
+      <!--property name="openjpa.Log" value="DefaultLevel=TRACE" /-->
       <property name="openjpa.DataCache"                value="true"/> 		
       <property name="openjpa.RemoteCommitProvider"     value="sjvm"/>
       <property name="openjpa.InitializeEagerly"        value="true"/>
       <property name="openjpa.DynamicEnhancementAgent"  value="false"/>
-      <property name="openjpa.RuntimeUnenhancedClasses" value="unsupported"/>
       <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
       <property name="openjpa.jdbc.QuerySQLCache"       value="true(EnableStatistics=true)"/>
+      
+      <!-- EclipseLink should create the database schema automatically -->
+      <property name="eclipselink.logging.level" value="FINE"/>
+			<property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
 
     </properties>
   </persistence-unit>

@@ -25,10 +25,10 @@
 </head>
 <body>
   <ui:composition  template="/WEB-INF/templates/master.xhtml" >
-    <ui:param name="title" value="List persons.."/>
+    <ui:param name="title" value="List friends.."/>
     <ui:define name="content">
 
-    <p>All persons</p>
+    <p>All friends</p>
     
     <h:dataTable border="1" value="#{allPersons.persons}" var="person">
       <h:column>
@@ -42,6 +42,12 @@
           Secondname
         </f:facet>
         #{person.lastname}
+      </h:column>
+      <h:column>
+        <f:facet name="header">
+          Nickname
+        </f:facet>
+        #{person.nickname}
       </h:column>
       <h:column>
         <f:facet name="header">

@@ -19,7 +19,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import net.wessendorf.enterprise.beans.Person;
+import net.wessendorf.enterprise.beans.Friend;
 import net.wessendorf.enterprise.service.PersonService;
 
 @Named("createPerson")
@@ -27,7 +27,7 @@ import net.wessendorf.enterprise.service.PersonService;
 public class CreatePersonController
 {
   @Inject private PersonService service;
-  private Person person = new Person();
+  private Friend person = new Friend();
 
   public String createPerson()
   {
@@ -35,11 +35,11 @@ public class CreatePersonController
     return "all_persons.xhtml?faces-redirect=true";
   }
   
-  public Person getPerson()
+  public Friend getPerson()
   {
     return person;
   }
-  public void setPerson(Person person)
+  public void setPerson(Friend person)
   {
     this.person = person;
   }

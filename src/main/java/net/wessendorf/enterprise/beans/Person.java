@@ -12,30 +12,26 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ */ 
 package net.wessendorf.enterprise.beans;
 
-import java.io.Serializable;
-
-import javax.persistence.Basic;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
-public class Person implements Serializable
+@DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Person extends PersistentObject
 {
-  // ------ bogus get/set stuff
-  public String getId()
-  {
-    return id;
-  }
+  private static final long serialVersionUID = 1L;
 
-  public void setId(String id)
-  {
-    this.id = id;
-  }
+  private String firstname;
+  private String lastname;
+
+  // ------ bogus get/set stuff
 
   public String getFirstname()
   {
@@ -57,14 +53,4 @@ public class Person implements Serializable
     this.lastname = lastname;
   }
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private String id;
-  
-  @Basic
-  private String firstname;
-  @Basic
-  private String lastname;
-
-  private static final long serialVersionUID = 1L;
 }
