@@ -7,9 +7,9 @@ mvn
 
 About this demo:
 The demo is a simple show case for modern JavaEE technology:
--CDI (Apache OpenWebBeans)
--JPA (Apache OpenJPA)
--JSF2 (Apache MyFaces)
+-CDI (Apache OpenWebBeans - Version 1.0.0)
+-JPA2 (Apache OpenJPA - Version 2.0.x)
+-JSF2 (Apache MyFaces - Version 2.0.x)
 
 and a set of CDI extensions (Apache MyFaces CODI)!
 
