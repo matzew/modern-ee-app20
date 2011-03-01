@@ -277,11 +277,11 @@
       <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
     </repository>
 
-    <!-- Apache MyFaces staging -->
+    <!-- Apache staging repository -->
     <repository>
       <id>apache.maven.repo</id>
       <name>Apache Repo for Maven bits</name>
-      <url>https://repository.apache.org/content/repositories/public</url>
+      <url>https://repository.apache.org/content/repositories/snapshots</url>
     </repository>
 
   </repositories>
@@ -290,7 +290,7 @@
     <myfaces.version>2.0.4</myfaces.version>
     <myfaces.codi.version>0.9.2</myfaces.codi.version>
     <prettyfaces.version>3.2.0</prettyfaces.version>
-    <openwebbeans.version>1.0.0</openwebbeans.version>
+    <openwebbeans.version>1.1.0-SNAPSHOT</openwebbeans.version>
     <openjpa.version>2.0.1</openjpa.version>
     <geronimo_interceptor.version>1.0</geronimo_interceptor.version>
     <geronimo_cdi.version>1.0</geronimo_cdi.version>
